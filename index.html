@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lost & Found</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎒 Lost & Found Portal</h1>
+
+    <form id="itemForm">
+      <div class="form-grid">
+        <select id="type">
+          <option value="lost">Lost</option>
+          <option value="found">Found</option>
+        </select>
+        <input type="text" id="title" placeholder="Item title" required />
+        <input type="text" id="location" placeholder="Location" required />
+        <textarea id="description" placeholder="Describe the item..." required></textarea>
+        <input type="text" id="name" placeholder="Your name" required />
+        <input type="text" id="contact" placeholder="Email / Phone" required />
+        <input type="file" id="image" accept="image/*" />
+        <img id="preview" src="" alt="Image Preview" style="display: none;" />
+        <button type="submit">Post Item</button>
+      </div>
+    </form>
+
+    <div class="search-filter">
+      <input type="text" id="search" placeholder="Search by title..." onkeyup="filterItems('all')" />
+      <div class="filter">
+        <button onclick="filterItems('all')">All</button>
+        <button onclick="filterItems('lost')">Lost</button>
+        <button onclick="filterItems('found')">Found</button>
+      </div>
+    </div>
+
+    <div id="itemsList"></div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to post this item?</p>
+      <button onclick="confirmSubmit(true)">Yes</button>
+      <button onclick="confirmSubmit(false)">No</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

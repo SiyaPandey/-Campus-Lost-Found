@@ -1,0 +1,123 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+    --accent: #6366f1;
+    --danger: #ef4444;
+    --success: #10b981;
+    --input: #334155;
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 750px;
+    background: var(--card);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  .form-grid {
+    display: grid;
+    gap: 12px;
+  }
+  
+  input, textarea, select {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--input);
+    color: var(--text);
+  }
+  
+  button {
+    padding: 12px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #4f46e5;
+  }
+  
+  img#preview {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+  }
+  
+  .search-filter {
+    margin-bottom: 20px;
+  }
+  
+  .filter {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  #itemsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .item {
+    background: var(--input);
+    padding: 15px;
+    border-left: 6px solid;
+    border-radius: 10px;
+  }
+  
+  .item.lost { border-color: var(--danger); }
+  .item.found { border-color: var(--success); }
+  
+  .item h3 { margin: 0 0 5px; }
+  .item small { color: #cbd5e1; }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
